@@ -2,7 +2,7 @@
 
 Backend Server made with: [nodeJS](https://nodejs.org) and [express](http://expressjs.com/). (NodeJS é um javascript runtime e express é uma web framework que corre em cima do nodeJS. O express serve para facilitar a criação de um servidor e APIs.)
 
-Frontend made with [AngularJS](https://angularjs.org/). (Angular é uma framework que corre no browser em cima do normal HTML e Javascript e serve para fazer web applications).
+Frontend made with [AngularJS](https://angularjs.org/). (Angular é uma framework que corre no browser em cima do normal HTML e Javascript e serve para fazer web applications). Para a parte de ui (gŕaficos) usei [Angular Material](https://material.angularjs.org/latest/)
 
 Database used: [MongoDB](https://www.mongodb.org/). (É uma NoSql db, das mais usadas muito boa).
 
@@ -54,4 +54,8 @@ Start server:
 npm start
 ```
 
-That's it! Check localhost:3000. (If running on a cloud vm, check \<vm ip\>:3000, don't forget to open port 3000)
+That's it! Check localhost:3000. (If running on a cloud vm, check \<vm ip\>:3000, don't forget to open port 3000).
+
+##ABOUT THE CODE
+
+Tudo o que pertence à parte de frontend encontra-se na pasta public/ng. Estes são os componentes de angular. Tudo o que 
