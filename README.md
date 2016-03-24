@@ -48,4 +48,4 @@ Start server
 npm start
 ```
 
-That's it! Check localhost:3000. (If running on a cloud vm -> vm_ip:3000, don't forget to open port 3000)
+That's it! Check localhost:3000. (If running on a cloud vm, check <vm_ip>:3000, don't forget to open port 3000)
