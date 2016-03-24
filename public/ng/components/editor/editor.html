@@ -1,0 +1,23 @@
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <div flex layout="row" layout-align="start center">
+            <md-button ng-click="editor.goBack()">
+                <div layout="row" layout-align="start center">
+                    <i class="material-icons">keyboard_arrow_left</i>
+                    <span hide show-gt-sm layout-margin>Back</span>
+                </div>
+            </md-button>
+        </div>
+        <span layout-padding><i class="material-icons">music_note</i></span>
+        <h2>{{editor.songInfo.name}}</h2>
+        <div layout="row" layout-align="end end" flex>
+            <span hide show-gt-xs flex="20"></span>
+            <user-troid></user-troid>
+            <span hide show-gt-xs flex="10"></span>
+        </div>
+    </div>
+</md-toolbar>
+
+<md-content layout="row" flex>
+    <ide-troid layout="column" flex song="editor.songID"></ide-troid>
+</md-content>

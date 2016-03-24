@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>App</title>
+    
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
+    
+    <script src="/bower_components/angular/angular.js"></script>
+    
+    <script src="/bower_components/angular-resource/angular-resource.js"></script>
+    
+    <script src="/bower_components/angular-aria/angular-aria.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/angular-material/angular-material.js"></script>
+    
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    
+    <script src="/ng/app.js"></script>
+    
+    <script src="/ng/components/editor/editor.js"></script>
+    <script src="/ng/components/ide/ide.js"></script>
+    <script src="/ng/components/user/user.js"></script>
+    
+    <script src="/ng/components/login/login.js"></script>
+    
+    <script src="/ng/components/list/list.js"></script>
+    
+    <script src="/ng/services/UserService.js"></script>
+    <script src="/ng/services/TexService.js"></script>
+    <script src="/ng/services/SongsService.js"></script>
+    
+</head>
+
+<body ng-app="default" layout="column" flex>
+
+   <div ui-view layout="column" flex></div>
+
+</body>
+
+</html>

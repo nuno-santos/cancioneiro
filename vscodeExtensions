@@ -1,0 +1,21 @@
+eslint
+htmlhint
+htmlsnippets
+gitignore
+
+how to work with git:
+initialize repository
+git config credential.helper cache
+or
+git config credential.helper 'cache --timeout=259200'
+or
+git config credential.helper store
+git commit -m 'Initial commit'
+git push -u origin master
+
+https://help.github.com/articles/fork-a-repo/
+https://help.github.com/articles/syncing-a-fork/
+
+git fetch upstream
+git checkout master
+git merge upstream/master

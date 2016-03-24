@@ -1,0 +1,46 @@
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <span flex layout="row" layout-align="start center">
+            <span hide show-gt-xs class="md-subhead">add song</span>
+            <md-button ng-click="list.showAdvanced($event)" class="md-fab md-warn" aria-label="Add" layout="row" layout-align="center center">
+                <i class="material-icons">add</i>
+            </md-button>
+        </span>
+        <span layout-padding><i class="material-icons">music_note</i></span>
+        <h2>Songs Maker</h2>
+        <div layout="row" layout-align="end end" flex>
+            <span hide show-gt-xs flex="20"></span>
+            <user-troid></user-troid>
+            <span hide show-gt-xs flex="10"></span>
+        </div>
+    </div>
+</md-toolbar>
+<md-content layout="row" flex layout-align="center center">
+    <div layout="column" flex-gt-xs="70">
+        <md-list ng-cloak>
+            <md-subheader class="md-no-sticky">Select a song</md-subheader>
+            <md-list-item ng-repeat="song in list.getAllSongs()">
+                <h3 class="md-title">{{song.name}}</h3><span flex></span>
+                <md-button class="md-icon-button md-primary">
+                    <i class="material-icons">share</i>
+                </md-button>
+                <md-button class="md-icon-button md-primary" ng-click="list.deleteSong(song.id)">
+                    <i class="material-icons">delete</i>
+                </md-button>
+
+                <md-button ng-click="list.openPdf(song.id)" class="md-icon-button md-primary">
+                    <i class="material-icons">picture_as_pdf</i>
+                </md-button>
+                <md-button ng-click="list.editSong(song.id)" class="md-primary" layout="row">
+                    <div layout="row" layout-align="center center">
+                        <span hide show-gt-sm layout-margin>Edit song</span>
+                        <i class="material-icons">edit</i>
+                    </div>
+                </md-button>
+
+            </md-list-item>
+        </md-list>
+    </div>
+
+
+</md-content>

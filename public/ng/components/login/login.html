@@ -1,0 +1,28 @@
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <span layout-padding><i class="material-icons">music_note</i></span>
+        <h2>Songs Maker</h2>
+        <span flex></span>
+
+    </div>
+</md-toolbar>
+<md-content layout="row" layout-align="center center">
+    <div layout="column">
+        <h1 class="md-display-3">Login or Register</h1>
+
+        <md-input-container>
+            <label>Username</label>
+            <input ng-model="login.loginInfo.username" />
+        </md-input-container>
+        <md-input-container>
+            <label>Password</label>
+            <input type="password" ng-model="login.loginInfo.password" />
+        </md-input-container>
+        <div layout="row">
+            <md-button ng-click="login.login()" class="md-primary md-raised">Login</md-button>
+            <md-button ng-click="login.register()" class="md-primary">Register</md-button>
+        </div>
+    </div>
+
+
+</md-content>

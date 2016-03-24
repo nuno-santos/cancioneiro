@@ -1,0 +1,27 @@
+<div layout="row" flex>
+    <div layout="column" flex>
+        <div layout="row" layout-align="space-around center">
+            <md-button ng-click="ide.compilePdf()" class="md-primary" layout="row">
+                <div layout="row" layout-align="center center">
+                    <i class="material-icons">picture_as_pdf</i>
+                    <span hide show-gt-xs layout-margin>Save & Compile PDF</span>
+                </div>
+            </md-button>
+            <md-button class="md-primary" layout="row">
+                <div layout="row" layout-align="center center">
+                    <i class="material-icons">share</i>
+                    <span hide show-gt-xs layout-margin>Share</span>
+                </div>
+            </md-button>
+            <md-button class="md-primary" layout="row" ng-click="ide.deleteSong()">
+                <div layout="row" layout-align="center center">
+                    <i class="material-icons">delete</i>
+                    <span hide show-gt-xs layout-margin>Delete</span>
+                </div>
+            </md-button>
+        </div>
+        <textarea ng-model="ide.text" flex></textarea>
+    </div>
+
+    <iframe ng-src="{{ide.getPdf()}}" flex></iframe>
+</div>
