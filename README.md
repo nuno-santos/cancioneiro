@@ -20,7 +20,8 @@ Os cursos da codeschool são muito bons para começar e são grátis, têm vári
 
 Install nodeJS:
 ```
-sudo apt-get install nodejs
+curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
+sudo apt-get install -y nodejs
 ```
 
 Install mongo
@@ -48,4 +49,4 @@ Start server
 npm start
 ```
 
-That's it! Check localhost:3000. (If running on a cloud vm, check <vm_ip>:3000, don't forget to open port 3000)
+That's it! Check localhost:3000. (If running on a cloud vm, check \<vm ip\>:3000, don't forget to open port 3000)
