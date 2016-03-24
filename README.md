@@ -24,27 +24,32 @@ curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
 
-Install mongo
+Install mongo:
 ```
 sudo apt-get install mongodb
 ```
 
-Download cancioneiro
+Install git (if not already installed):
+```
+sudo apt-get install git
+```
+
+Download cancioneiro:
 ```
 git clone https://github.com/nuno-santos/cancioneiro
 ```
 
-cd into our directory
+cd into our directory:
 ```
 cd cancioneiro
 ```
 
-Run npm install
+Run npm install:
 ```
 npm install
 ```
 
-Start server
+Start server:
 ```
 npm start
 ```
