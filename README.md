@@ -67,5 +67,7 @@ Tudo o que pertence à parte de frontend encontra-se:
 As partes do backend importantes são:
 
 * **bin/www e app.js:** scripts responsáveis por criar o servidor e indicar quais as routes a usar.
-* **routes/api.js** script onde está contida a API. Portanto estão definidas todas as routes por exemplo a route "GET /api/songs" devolve a lista de músicas, a route "GET /api/songs/<id>" devolve a música correspondente ao "<id>".
+* **routes/api.js** script onde está contida a API. Portanto estão definidas todas as routes por exemplo a route "GET /api/songs" devolve a lista de músicas, a route "GET /api/songs/\<id\>" devolve a música correspondente ao "\<id\>".
 * **custom_modules/auth_jwt.js:** script responsável por tratar da autenticação, feito com [JWT](https://jwt.io/), serve para autenticação com tokens sem precisar de cookies, é escalável e pronto para mobile apps.
+* **custom_modules/tex_manager.js:** script para tratar de compilar e devolver os ficheiros de latex e pdf.
+* **custom_modules/db_mongo.js:** script para comunicar com a base de dados, serve para registar e gerir utilizadores (usa um algoritmo para fazer hash da password para não guardar a password em plain text na base de dados), gerir músicas, etc.
