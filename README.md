@@ -1,4 +1,4 @@
-#FRAMEWORKS
+##FRAMEWORKS
 
 Backend Server made with: [nodeJS](https://nodejs.org) and [express](http://expressjs.com/). (NodeJS é um javascript runtime e express é uma web framework que corre em cima do nodeJS. O express serve para facilitar a criação de um servidor e APIs.)
 
@@ -8,14 +8,39 @@ Database used: [MongoDB](https://www.mongodb.org/). (É uma NoSql db, das mais u
 
 Hoje em dia este é o state of the art para fazer web applications e servidores com APIs. A combinação destes componentes chama-se MEAN Stack -> Mongo, Express, Angular, Node. PHP era como se fazia sites mais tradicionais, hoje em dia está muito muito longe das novas tecnologias. Outras frameworks usadas são Django (Python), Flask (Python), outras em java. Para mim a melhor é node e para este tipo de projectos é sem dúvida a superior em termos de performance e facilidade de desenvolvimento.
 
-#LEARN
+##LEARN
 
 Os cursos da codeschool são muito bons para começar e são grátis, têm várias coisas mas pode ver só os videos:
 
-Angular - https://www.codeschool.com/courses/shaping-up-with-angular-js
-Nodejs - https://www.codeschool.com/courses/real-time-web-with-node-js
-Express - http://campus.codeschool.com/courses/building-blocks-of-express-js/
+* Angular - https://www.codeschool.com/courses/shaping-up-with-angular-js
+* Nodejs - https://www.codeschool.com/courses/real-time-web-with-node-js
+* Express - http://campus.codeschool.com/courses/building-blocks-of-express-js/
 
+##HOW TO RUN LINUX
 
+Install nodeJS:
+```
+sudo apt-get install nodejs
+```
 
-#HOW TO RUN
+Install mongo
+```
+sudo apt-get install mongodb
+```
+
+cd into our directory
+```
+cd cancioneiro
+```
+
+Run npm install
+```
+npm install
+```
+
+Start server
+```
+npm start
+```
+
+That's it! Check localhost:3000.
