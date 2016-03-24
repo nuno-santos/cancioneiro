@@ -60,8 +60,12 @@ That's it! Check localhost:3000. (If running on a cloud vm, check \<vm ip\>:3000
 
 Tudo o que pertence à parte de frontend encontra-se:
 
-* **Pasta public/ng/components**. Estes são os componentes do angular. Cada componente tem uma certa responsabilidade (division of concerns) para ser mais fácil o desenvolvimento de cada um em separado. Por exemplo o componente list é responsável por mostrar a lista de músicas.
-* * **Pasta public/ng/services**. Estes são os serviços do angular. São responsáveis por comunicar com a API do servidor e passar os dados aos componentes. Também são responsáveis para tratar da comunicação entre diferentes componentes. 
-* **views/index.ejs**. Página inicial onde são incluidos todos os componentes do angular nesta única página (one page web site). Pode se notar o "<div ui-view ... ></div>" onde vão aparecer as diferentes views da aplicação consoante a navegação (login, lista de músicas, editor, etc).
+* **Pasta public/ng/components:** Estes são os componentes do angular. Cada componente tem uma certa responsabilidade (division of concerns) para ser mais fácil o desenvolvimento de cada um em separado. Por exemplo o componente list é responsável por mostrar a lista de músicas.
+* **Pasta public/ng/services:** Estes são os serviços do angular. São responsáveis por comunicar com a API do servidor e passar os dados aos componentes. Também são responsáveis para tratar da comunicação entre diferentes componentes. 
+* **views/index.ejs:** Página inicial onde são incluidos todos os componentes do angular nesta única página (one page web site). Pode se notar o "<div ui-view ... ></div>" onde vão aparecer as diferentes views da aplicação consoante a navegação (login, lista de músicas, editor, etc).
 
-As partes do backend importantes são app.js
+As partes do backend importantes são:
+
+* **bin/www e app.js:** scripts responsáveis por criar o servidor e indicar quais as routes a usar.
+* **routes/api.js** script onde está contida a API. Portanto estão definidas todas as routes por exemplo a route "GET /api/songs" devolve a lista de músicas, a route "GET /api/songs/<id>" devolve a música correspondente ao "<id>".
+* **custom_modules/auth_jwt.js:** script responsável por tratar da autenticação, feito com [JWT](https://jwt.io/), serve para autenticação com tokens sem precisar de cookies, é escalável e pronto para mobile apps.
