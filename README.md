@@ -62,7 +62,7 @@ Tudo o que pertence à parte de frontend encontra-se:
 
 * **Pasta public/ng/components:** Estes são os componentes do angular. Cada componente tem uma certa responsabilidade (division of concerns) para ser mais fácil o desenvolvimento de cada um em separado. Por exemplo o componente list é responsável por mostrar a lista de músicas.
 * **Pasta public/ng/services:** Estes são os serviços do angular. São responsáveis por comunicar com a API do servidor e passar os dados aos componentes. Também são responsáveis para tratar da comunicação entre diferentes componentes. 
-* **views/index.ejs:** Página inicial onde são incluidos todos os componentes do angular nesta única página (one page web site). Pode se notar o "<div ui-view ... ></div>" onde vão aparecer as diferentes views da aplicação consoante a navegação (login, lista de músicas, editor, etc).
+* **views/index.ejs:** Página inicial onde são incluidos todos os componentes do angular nesta única página (one page web site). Pode se notar o "\<div ui-view ... \>\</div\>" onde vão aparecer as diferentes views da aplicação consoante a navegação (login, lista de músicas, editor, etc).
 
 As partes do backend importantes são:
 
