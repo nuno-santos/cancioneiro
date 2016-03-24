@@ -56,6 +56,8 @@ npm start
 
 That's it! Check localhost:3000. (If running on a cloud vm, check \<vm ip\>:3000, don't forget to open port 3000).
 
+(If there is any problem installing any program, try running "sudo apt-get update" first)
+
 ##ABOUT THE CODE
 
 Tudo o que pertence à parte de frontend encontra-se:
