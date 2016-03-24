@@ -54,7 +54,7 @@ Start server:
 npm start
 ```
 
-That's it! Check localhost:3000. (If running on a cloud vm, check \<vm ip\>:3000, don't forget to open port 3000).
+That's it! Check localhost:3000. (If running on a cloud vm, check \<ip-da-vm\>:3000, don't forget to open port 3000).
 
 (If there were any problem installing a program, try running "sudo apt-get update" first).
 
