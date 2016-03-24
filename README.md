@@ -16,7 +16,7 @@ Os cursos da codeschool são muito bons para começar e são grátis, têm vári
 * Nodejs - https://www.codeschool.com/courses/real-time-web-with-node-js
 * Express - http://campus.codeschool.com/courses/building-blocks-of-express-js/
 
-##HOW TO RUN LINUX
+##HOW TO RUN
 
 Install nodeJS:
 ```
