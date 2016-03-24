@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/Teste');
 var Schema = mongoose.Schema;
-var bcrypt = require('bcrypt');
+var bcrypt = require('bcryptjs');
 var q = require("q");
 var uuid = require('node-uuid');
 
