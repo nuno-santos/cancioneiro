@@ -28,6 +28,11 @@ Install mongo
 sudo apt-get install mongodb
 ```
 
+Download cancioneiro
+```
+git clone https://github.com/nuno-santos/cancioneiro
+```
+
 cd into our directory
 ```
 cd cancioneiro
