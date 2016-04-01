@@ -7,20 +7,64 @@
                     <span hide show-gt-xs layout-margin>Save & Compile PDF</span>
                 </div>
             </md-button>
-            <md-button class="md-primary" layout="row">
-                <div layout="row" layout-align="center center">
-                    <i class="material-icons">share</i>
-                    <span hide show-gt-xs layout-margin>Share</span>
-                </div>
-            </md-button>
-            <md-button class="md-primary" layout="row" ng-click="ide.deleteSong()">
+            <md-button class="md-primary" layout="row" ng-click="showConfirm($event)">
                 <div layout="row" layout-align="center center">
                     <i class="material-icons">delete</i>
                     <span hide show-gt-xs layout-margin>Delete</span>
                 </div>
             </md-button>
         </div>
-        <textarea ng-model="ide.text" flex></textarea>
+
+        <div layout="row" flex>
+            <div layout="column" layout-align="top center">
+                <md-button class="md-fab md-mini md-primary" ng-click="inject('<title>\n')">
+                    <md-tooltip md-direction="right">
+                        Insert &lt;title&gt;
+                    </md-tooltip>
+                    <span hide show-gt-xs layout-margin>T</span>
+                </md-button>
+                <md-button class="md-fab md-mini md-primary" ng-click="inject('<artist>\n')">
+                    <md-tooltip md-direction="right">
+                        Insert &lt;artist&gt;
+                    </md-tooltip>
+                    <span hide show-gt-xs layout-margin>A</span>
+                </md-button>
+                <md-button class="md-fab md-mini md-primary" ng-click="inject('<chorus>\n')">
+                    <md-tooltip md-direction="right">
+                        Insert &lt;chorus&gt;
+                    </md-tooltip>
+                    <span hide show-gt-xs layout-margin>C</span>
+                </md-button>
+                <md-button class="md-fab md-mini md-primary" ng-click="inject('<verse>\n')">
+                    <md-tooltip md-direction="right">
+                        Insert &lt;verse&gt;
+                    </md-tooltip>
+                    <span hide show-gt-xs layout-margin>V</span>
+                </md-button>
+                <md-button class="md-fab md-mini md-primary" ng-click="bracketize()">
+                    <md-tooltip md-direction="right">
+                        Surround with square brackets
+                    </md-tooltip>
+                    <span hide show-gt-xs layout-margin>[ ]</span>
+                </md-button>
+                <md-button class="md-fab md-mini md-primary" ng-click="inject('<translate>\n')">
+                    <md-tooltip md-direction="right">
+                        Insert &lt;translate&gt;
+                    </md-tooltip>
+                    <span hide show-gt-xs layout-margin>L</span>
+                </md-button>
+                <md-button class="md-fab md-mini md-primary" ng-click="inject('<note>\n')">
+                    <md-tooltip md-direction="right">
+                        Insert &lt;note&gt;
+                    </md-tooltip>
+                    <span hide show-gt-xs layout-margin>N</span>
+                </md-button>
+            </div>
+
+            <textarea ng-model="ide.text" my-text-inject my-text-bracketize style="font-family: Consolas, Monaco, monospace; font-size: 14px; line-height: 22px;" flex></textarea>
+
+        </div>
+
     </div>
 
     <iframe ng-src="{{ide.getPdf()}}" flex></iframe>

@@ -7,7 +7,7 @@
             </md-button>
         </span>
         <span layout-padding><i class="material-icons">music_note</i></span>
-        <h2>Songs Maker</h2>
+        <h2>Song Repository</h2>
         <div layout="row" layout-align="end end" flex>
             <span hide show-gt-xs flex="20"></span>
             <user-troid></user-troid>
@@ -19,21 +19,24 @@
     <div layout="column" flex-gt-xs="70">
         <md-list ng-cloak>
             <md-subheader class="md-no-sticky">Select a song</md-subheader>
-            <md-list-item ng-repeat="song in list.getAllSongs()">
-                <h3 class="md-title">{{song.name}}</h3><span flex></span>
-                <md-button class="md-icon-button md-primary">
-                    <i class="material-icons">share</i>
-                </md-button>
-                <md-button class="md-icon-button md-primary" ng-click="list.deleteSong(song.id)">
-                    <i class="material-icons">delete</i>
-                </md-button>
+            <md-list-item ng-repeat="song in list.getAllSongs() | orderBy:'name'">
 
-                <md-button ng-click="list.openPdf(song.id)" class="md-icon-button md-primary">
-                    <i class="material-icons">picture_as_pdf</i>
+                <h3 class="md-title">{{song.name}}</h3><span flex></span>
+                <md-button ng-click="showConfirm($event, song)" class="md-primary" layout="row">
+                    <div layout="row" layout-align="center center">
+                        <span hide show-gt-sm layout-margin>Delete</span>
+                        <i class="material-icons">delete</i>
+                    </div>
+                </md-button>
+                <md-button ng-click="list.openPdf(song.id)" class="md-primary" layout="row">
+                    <div layout="row" layout-align="center center">
+                        <span hide show-gt-sm layout-margin>View</span>
+                        <i class="material-icons">picture_as_pdf</i>
+                    </div>
                 </md-button>
                 <md-button ng-click="list.editSong(song.id)" class="md-primary" layout="row">
                     <div layout="row" layout-align="center center">
-                        <span hide show-gt-sm layout-margin>Edit song</span>
+                        <span hide show-gt-sm layout-margin>Edit</span>
                         <i class="material-icons">edit</i>
                     </div>
                 </md-button>

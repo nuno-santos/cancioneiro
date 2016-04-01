@@ -1,0 +1,39 @@
+{
+  "name": "angular-highlight-textarea",
+  "version": "1.2.0",
+  "homepage": "https://github.com/trusta/angular-highlight-textarea",
+  "authors": [
+    "Florent Boisselier <fboisselier52@gmail.com>"
+  ],
+  "description": "A directive to highlight words and sentences into <textarea> and <input>",
+  "main": "dist/angular-highlight-textarea.min.js",
+  "keywords": [
+    "angular",
+    "highlight",
+    "directive",
+    "textarea"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "src",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.14",
+    "jquery-highlighttextarea": "~3.1.0",
+    "jquery-ui": "~1.11.1"
+  },
+  "_release": "1.2.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.2.0",
+    "commit": "732410052b51648dd5604c59a41eda3b9c969da2"
+  },
+  "_source": "git://github.com/trusta/angular-highlight-textarea.git",
+  "_target": "^1.2.0",
+  "_originalSource": "angular-highlight-textarea",
+  "_direct": true
+}

@@ -8,7 +8,7 @@ angular.module("default")
             controllerAs: 'list'
         };
     })
-    .controller("listCtrl", function(Songs, $mdDialog, $state, $window) {
+    .controller("listCtrl", function(Songs, $mdDialog, $state, $window, $scope, $mdMedia) {
         this.getAllSongs = function() {
             return Songs.getSongsList();
         };
@@ -54,4 +54,21 @@ angular.module("default")
                 });
         };
 
+        // code to pop up dialog before deleting a song
+        var l = this;
+        $scope.customFullscreen = $mdMedia('xs') || $mdMedia('sm');
+        $scope.showConfirm = function(ev, s) {
+            var confirm = $mdDialog.confirm()
+                  .title('Would you like to delete the song?')
+                  .textContent('The song \'' + s.name + '\' will be lost!')
+                  .targetEvent(ev)
+                  .ok('Yes')
+                  .cancel('No');
+            $mdDialog.show(confirm).then(function() {
+                l.deleteSong(s.id);
+                console.log('song deleted');
+            }, function() {
+                console.log('song delete canceled');
+            });
+        };
     });

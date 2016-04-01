@@ -20,5 +20,4 @@ angular.module("default")
         this.goBack = function() {
             $state.go("list");
         };
-
     });
