@@ -44,6 +44,11 @@ cd into our directory:
 cd cancioneiro
 ```
 
+Start mongodb:
+```
+mongodb
+```
+
 Run npm install:
 ```
 npm install
@@ -57,6 +62,22 @@ npm start
 That's it! Check localhost:3000. (If running on a cloud vm, check \<ip-da-vm\>:3000, don't forget to open port 3000).
 
 (If there were any problem installing a program, try running "sudo apt-get update" first).
+
+##DB BACKUP AND RESTORE
+
+Para criar snapshot da base de dados, entrar no directorio mongodb e executar:
+
+```
+mongodump --out snapshot-<day>-<time>
+```
+
+Para fazer restore da base de dados, basta fazer:
+
+```
+mongorestore snapshot-<day>-<time>
+```
+
+Naturalmente, é necessário garantir que o servidor do MongoDB está a correr. Mais informações aqui: https://docs.mongodb.org/manual/tutorial/backup-and-restore-tools/
 
 ##ABOUT THE CODE
 
