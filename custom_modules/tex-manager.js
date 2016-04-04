@@ -71,31 +71,53 @@ var getPdf = function(id) {
 var save = function(id, data) {
     var deferred = q.defer();
 
-    // parse the input
-//    var titleRe = /{\s*title\s*:\s*(.*?)\s*}/i;
-    var titleRe = /<\s*title\s*>\s*(.*?)\s*\n/i;
-    var titleFound = data.match(titleRe);
-    console.log(titleFound[1]);
+    // parse the <> keys and their respective values
 
-//    var artistRe = /{\s*artist\s*:\s*(.*?)\s*}/i;
-    var artistRe = /<\s*artist\s*>\s*(.*?)\s*\n/i;
-    var artistFound = data.match(artistRe);
-    console.log(artistFound[1]);
+    var keysRe = /<\s*(.*?)\s*>/ig;
+    var keysFound = data.match(keysRe);
+    console.log(keysFound);
+    var keysSplit = data.split(keysRe);
+    console.log(keysSplit);
 
-    var body = data;
-    body = body.replace(titleRe, '');
-    body = body.replace(artistRe, '');
 
-    body = body.replace(/{\s*beginverse\s*}/ig, '\\beginverse');
-    body = body.replace(/{\s*endverse\s*}/ig, '\\endverse');
+    if (keysFound.length != (keysSplit.length * 2 + 1)) {
+        console.log("Syntax error: invalid song format.");
+    }
 
-    body = body.replace(/{\s*beginchorus\s*}/ig, '\\beginchorus');
-    body = body.replace(/{\s*endchorus\s*}/ig, '\\endchorus');
+    // build a key-value array
 
-    body = body.replace(/\[/ig, '\\[');
+    var meta = [];
+    for (var k = 1; k < keysSplit.length; k += 2) {
+        meta.push({ key : keysSplit[k], val : keysSplit[k+1].trim() });
+    }
+    console.log(meta);
 
-    body = body.replace(/{\s*begintranslation\s*}/ig, '\\begin{minipage}[t]{.45\\textwidth}\\vspace{15pt}\\textit{');
-    body = body.replace(/{\s*endtranslation\s*}/ig, '}\\end{minipage}\n');
+    // generate the corresponding latex code
+
+    var title = ""
+    var artist = ""
+    var lyrics =""
+    meta.forEach( function(i) {
+        switch(i.key) {
+            case "title":
+                title = i.val;
+                break;
+            case "artist":
+                artist = i.val;
+                break;
+            case "chorus":
+                lyrics += '\\beginchorus\n' + i.val.replace(/\[/ig, '\\[') + '\n\\endchorus\n';
+                break;
+            case "verse":
+                lyrics += '\\beginverse\n' + i.val.replace(/\[/ig, '\\[') + '\n\\endverse\n';
+                break;
+            case "translation":
+                lyrics += '\\begin{minipage}[t]{.45\\textwidth}\\vspace{15pt}\\textit{' +
+                            i.val + '}\\end{minipage}\n';
+            default:
+                break;
+        }
+    });
 
     var preamble = "%\n\
 % Tex-generated file based on the songs project:\n\
@@ -112,7 +134,7 @@ var save = function(id, data) {
 \\songsection{Cancioneiro CL Portugal}\n\
 \n\
 \\begin{songs}{}\n\
-\\beginsong{" + titleFound[1] + "}[by={" + artistFound[1] + "},\n\
+\\beginsong{" + title + "}[by={" + artist + "},\n\
                      sr={},\n\
                      cr={},\n\
                      index={}]\n\
@@ -122,9 +144,10 @@ var save = function(id, data) {
 \\end{songs}\n\
 \\end{document}\n";
 
-    var texDoc = preamble + body + epilogue;
-
+    var texDoc = preamble + lyrics + epilogue;
     console.log(texDoc);
+
+    // write the .song and .tex files onto disk
 
     fs.writeFile(texPath + id + ".song", data,
         function(err) {
@@ -151,6 +174,34 @@ var save = function(id, data) {
                 });
         });
     return deferred.promise;
+
+        /*
+    // parse the input
+//    var titleRe = /{\s*title\s*:\s*(.*?)\s*}/i;
+    var titleRe = /<\s*title\s*>\s*(.*?)\s*\n/i;
+    var titleFound = data.match(titleRe);
+    console.log(titleFound[1]);
+
+//    var artistRe = /{\s*artist\s*:\s*(.*?)\s*}/i;
+    var artistRe = /<\s*artist\s*>\s*(.*?)\s*\n/i;
+    var artistFound = data.match(artistRe);
+    console.log(artistFound[1]);
+
+    var body = data;
+    body = body.replace(titleRe, '');
+    body = body.replace(artistRe, '');
+
+    body = body.replace(/{\s*beginverse\s*}/ig, '\\beginverse');
+    body = body.replace(/{\s*endverse\s*}/ig, '\\endverse');
+
+    body = body.replace(/{\s*beginchorus\s*}/ig, '\\beginchorus');
+    body = body.replace(/{\s*endchorus\s*}/ig, '\\endchorus');
+
+    body = body.replace(/\[/ig, '\\[');
+
+    body = body.replace(/{\s*begintranslation\s*}/ig, '\\begin{minipage}[t]{.45\\textwidth}\\vspace{15pt}\\textit{');
+    body = body.replace(/{\s*endtranslation\s*}/ig, '}\\end{minipage}\n');
+    */
 };
 
 module.exports = {
