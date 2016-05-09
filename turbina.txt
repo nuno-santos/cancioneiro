@@ -1,0 +1,11 @@
+
+
+1. Correr o mongodb:
+
+export LC_ALL=C
+mongod --dbpath /home/nsantos/cancioneiro/production/data > /home/nsantos/cancioneiro/production/logs/mongod.log &
+
+Para terminar o mongodb:
+
+mongod --shutdown --dbpath /home/nsantos/cancioneiro/production/data
+
